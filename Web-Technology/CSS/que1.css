@@ -1,0 +1,21 @@
+section{
+    text-align:left;
+    background-color: papayawhip;
+}
+body{
+    border: 2px solid black;
+    padding: 50px;
+    margin: 100px;
+}
+div{
+    border:2px solid blue;
+    width:100px;
+    height: 60px;
+    margin-top: 10px;
+    padding:30px;
+   display: inline-flex;
+}
+h4{
+    margin-top: 10px;
+    text-decoration-line: underline;
+}

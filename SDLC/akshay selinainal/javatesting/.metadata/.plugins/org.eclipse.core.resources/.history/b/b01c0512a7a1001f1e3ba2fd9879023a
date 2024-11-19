@@ -1,0 +1,16 @@
+package selinaldemo;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class demo1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method 
+		
+		WebDriver dr= new ChromeDriver();
+		dr.get("https://www.google.com");
+		dr.get("https://www.gmail.com");
+	}
+
+}

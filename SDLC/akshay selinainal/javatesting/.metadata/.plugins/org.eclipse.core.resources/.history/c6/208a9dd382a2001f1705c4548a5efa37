@@ -1,0 +1,14 @@
+package selinaldemo;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class actionclass2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver dr3=new ChromeDriver();
+		dr3.get("https://demo.guru99.com?test?drag_drop.html");
+	}
+
+}

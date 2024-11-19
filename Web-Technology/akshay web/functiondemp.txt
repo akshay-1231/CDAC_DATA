@@ -1,0 +1,214 @@
+mapdemo
+
+
+
+<script>
+    var  numbers=[1,2,3,4,5];
+    var squaes1=[];
+
+    for(let i=0;i<numbers.length;i++){
+        squaes1.push(numbers[i]*numbers[i]);
+    }
+    console.log(squaes1);
+
+    var squaes2 = numbers.map((num) => {return num*num});
+    console.log(squaes2);
+
+
+    var String=["akshay","ajay","kanchan"];
+  var upper1=[];
+    for(let i=0;i<String.length;i++){
+        upper1.push(String[i].toUpperCase());
+    }
+    console.log(upper1);
+//to conver to upper case
+   
+    var upper2 =String.map(String =>String.toUpperCase());
+    console.log(upper2);
+//////////////////////////////////////////////////////////////
+
+    const info =[{id:1, name:"akshay",age:22},{id:2,name:"ajay",age:23},{id:3,name:"kanchan",age:18}];
+    var name1=[];
+    var age1=[];
+  for(let i=0;i<info.length;i++){
+    name1.push(info[i].name);
+    age1.push(info[i].age);
+  }
+  console.log(name1);
+  console.log(age1);
+////////////////////////////////////////////////////////////
+
+  const history =[{id:1, name:"akshay",age:22,math:55,sci:66,eng:44},{id:2,name:"ajay",age:23,math:55,sci:33,eng:77},{id:3,name:"kanchan",age:18,math:66,sci:44,eng:53}];
+   var per=history.map((history) => {
+    let percentage=((history.math+history.sci+history.eng)/300)*100;
+    return history.name+  "  percentage:"+percentage;
+   })
+   console.log(per);
+   //////////////////////////////////////////////////////
+   
+</script>
+///////////////////////////////////////////////
+asyncrinus
+
+
+<script>
+    //synchronus-->run line by line
+    console.log('start');
+    const fechdata =()=>{
+          console.log("long way....");
+    }
+    fechdata();
+    console.log("end");
+    console.log("========================================");
+    //asyncronus-->settimer method is used
+    //start---stack
+    //fechdata--callback queue--after3000 sec--comes in stack
+    //end--stack
+    console.log("start");
+    const fechdata1 =()=>{
+        setTimeout(()=>{
+            console.log("long way....after 3000sec settimeout method");
+        },3000)
+        
+    }
+    fechdata1();
+
+
+    console.log("end");
+</script>
+//////////////////////////
+fundemo
+
+//named function
+//()---> to pass parameters
+function sayhello(name){
+  console.log(`hello ${name}`);
+}
+
+sayhello("ajay");
+
+//anonymous function---->without name-->creating callby function
+var myfun= function(){
+    console.log("asddf")
+}
+myfun();
+
+//arrow function-->reduce length of code
+const great = () =>{console.log("today is saturday");
+
+}
+
+great();
+
+//array-->collection same datatype 
+//declare arrow
+const marvellheros =["iron man","thor","blackwidow","stranger"];
+//anoter way of declaration
+const dcheros = new Array("superman","wonder women","flash")
+//to access array
+var captain= marvellheros[3];
+
+for(let i=0;i<marvellheros.length;i++){
+    console.log(marvellheros[i]);
+}
+//here we get actual elements
+for (let hero of marvellheros) {
+    console.log(hero);
+}
+
+//we get  index only
+
+for (let hero in marvellheros) {
+    console.log(hero);
+}
+
+//to print elements and index together
+
+marvellheros.forEach((hero,i) =>console.log(hero,i));
+
+//push arrow
+
+const marvellheros1 =["iron man","thor","blackwidow","stranger"];
+ marvellheros1.push("cation america");
+ console.log(marvellheros1);
+
+//pop
+marvellheros1.pop("cation america");
+console.log(marvellheros1);
+//unshift to add at first place in array
+marvellheros1.unshift("thor");
+console.log(marvellheros1);
+
+//slice-->to take subarray from array
+marvellheros.slice(0,2);
+console.log(marvellheros);
+
+//splice
+ var arr=dcheros.splice(0,1);
+ console.log("spiced array:",arr);
+ console.log("orignal array:",dcheros);
+ //
+ dcheros.splice(1,2,"aueaman");
+ console.log(dcheros);
+
+
+
+//////////////////////////////////////
+async
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <h2>Alaram</h2>
+    <input type="" id="iBox">
+    <button id="btn">set alaram</button>
+    <div id="msg"></div>
+    <script>
+        document.querySelector("#btn").addEventListener('click',()=>{
+            var delay = document.querySelector("#iBox").value;
+            var seconds= Number(delay);     
+            console.log(seconds);
+            setTimeout(()=>{
+                  document.querySelector("#msg").innerHTML="<h4>wake up</h4>"
+            },seconds)
+           })
+           console.log("good morning");
+    </script>
+
+</body>
+</html>
+/////////////
+asyn3
+<script>
+    //syncronus
+   
+    console.log("start");
+    var xhr=new XMLHttpRequest();
+    xhr.open('GET','https://jsonplaceholder.typicode.com/posts',false);
+    xhr.send();
+    if(xhr.status == 200){
+        console.log(xhr.responseText);
+    }
+    console.log("end");
+
+    //asynchronusly
+    console.log("start");
+ var res= fetch('https://jsonplaceholder.typicode.com/posts');
+  res.then((res)=>{
+    res.json();
+
+  }).then((data)=>{
+    console.log(data);
+  }).catch((error)=>{
+    console.log(error);
+  })
+  
+  console.log("end");
+
+
+</script>

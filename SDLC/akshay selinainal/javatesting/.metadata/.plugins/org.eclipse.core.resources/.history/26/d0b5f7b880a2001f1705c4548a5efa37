@@ -1,0 +1,19 @@
+package selinaldemo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class actionclass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver dr3=new ChromeDriver();
+		dr3.get("https://www.google.com");
+		Actions act =new Actions(dr3);
+		WebElement w=dr3.findElement(By.id("https://www.google.com"));
+	}
+
+}

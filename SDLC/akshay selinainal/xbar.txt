@@ -1,0 +1,304 @@
+//a[contains(text(),'SUPPORT')]              ---->this use for button containing links
+//input[@name='firstName']
+//input[@name='userName']
+
+to jump from one input to aother can use
+//input[@name='firstName']//following::input[7]
+
+testing--->
+
+package selinaldemo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class demo6 {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		WebDriver obj=new ChromeDriver();
+		obj.get("https://www.jotform.com/42382403598964");
+
+		obj.manage().window().maximize();
+
+		obj.findElement(By.name("q3_name")).sendKeys("Akshay");
+
+		obj.findElement(By.name("q4_email")).sendKeys("akshayprajapati424206@gmail.com");
+
+		//webelemnt for dropdown key
+
+		WebElement we = obj.findElement(By.id("input_7_month"));
+
+		we.sendKeys("May");
+
+		we.click();
+
+		//webelemnt for dropdown key
+
+		WebElement we1 = obj.findElement(By.id("input_7_day"));
+
+		we1.sendKeys("12");
+
+		we1.click();
+
+		
+
+		
+		//webelemnt for dropdown key
+		WebElement we2 = obj.findElement(By.id("input_7_year"));
+
+		we2.sendKeys("1998");
+
+		we2.click();
+
+		
+
+		obj.findElement(By.name("q5_address5[addr_line1]")).sendKeys("jamner");
+
+		obj.findElement(By.name("q5_address5[addr_line2]")).sendKeys("jalgoan");
+
+		obj.findElement(By.name("q5_address5[city]")).sendKeys("jalgaon");
+
+		obj.findElement(By.name("q5_address5[state]")).sendKeys("Maharastra");
+
+		obj.findElement(By.name("q5_address5[postal]")).sendKeys("424206");
+
+		
+
+		WebElement we3 = obj.findElement(By.name("q5_address5[country]"));
+
+		we3.sendKeys("India");
+
+		we3.click();
+
+		
+
+		obj.findElement(By.id("input_2")).click();
+		
+	}
+
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+tabhandle-->
+                package selinaldemo;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class tabhandling {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver dr3=new ChromeDriver();
+	//	dr3.get("https://www.google.com");
+		
+		String Pw= dr3.getWindowHandle();
+		dr3.navigate().to("https://www.google.com");
+		//to open new tab
+	
+		dr3.switchTo().newWindow(WindowType.TAB);
+		String cw= dr3.getWindowHandle();
+		dr3.navigate().to("https://www.gmail.com");
+		dr3.switchTo().window(Pw);
+	
+	
+	}
+
+}
+
+
+
+action--->           package selinaldemo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class actionclass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver dr3=new ChromeDriver();
+		dr3.get("https://demo.guru99.com/test/newtours/register.php");
+		//dr3.findElement(By.name("firstName")).sendKeys("akshay");
+		
+		//action class perform to get in tab and perform operations  so create object of action class w
+		Actions act =new Actions(dr3);
+		WebElement w=dr3.findElement(By.name("firstName"));
+		w.sendKeys("akshay");
+		//double click
+		act.doubleClick(w).build().perform();
+		
+		//right click
+		act.contextClick(w).build().perform();
+		
+	}
+
+}
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        
+action class--->          package selinaldemo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class actionclass2 {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		WebDriver dr3=new ChromeDriver();
+		dr3.get("https://demo.guru99.com/test/drag_drop.html");
+		
+		Actions act =new Actions(dr3);
+		WebElement drag=dr3.findElement(By.id("fourth"));
+		WebElement drop=dr3.findElement(By.id("amt7"));
+		act.dragAndDrop(drag, drop).build().perform();
+		Thread.sleep(2000);
+		WebElement drag1=dr3.findElement(By.id("credit2"));
+		Thread.sleep(2000);
+		WebElement drop1=dr3.findElement(By.id("bank"));
+		act.dragAndDrop(drag1, drop1).build().perform();
+		
+		
+		
+		
+		
+		
+	}
+
+}
+
+
+package selinaldemo;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class demo7 {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		WebDriver dr3=new ChromeDriver();
+		dr3.get("https://demoqa.com/alerts");
+		
+		dr3.findElement(By.id("alertButton")).click();
+		Thread.sleep(4000);
+		Alert al =dr3.switchTo().alert();
+		System.out.println(al.getText());
+		dr3.findElement(By.id("promptButton")).click();
+	//	dr.findElement(By.name("lastName")).sendKeys("prajapati");
+	//	Alert al1 =dr3.switchTo().alert();
+		//System.out.println(al1.getText());
+		al.accept();
+		
+		
+		
+	
+	}
+
+}
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+priprity-->      to open webpage and entre value using xpath
+
+                 package testpackage;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+
+public class login {
+	public static WebDriver dr;
+  @Test
+  public void login() {
+	  dr.findElement(By.xpath("//input[@name='username']")).sendKeys("student");
+	  dr.findElement(By.xpath("//input[@name='password']")).sendKeys("Password123"); 
+	  dr.findElement(By.xpath("//button[@id='submit']")).click() ;
+	  
+  }
+  @BeforeTest
+  public void beforeTest() {
+	   dr =new ChromeDriver();
+	   dr.get("https://practicetestautomation.com/practice-test-login/");
+  }
+
+  @AfterTest
+  public void afterTest() {
+	  dr.close();
+  }
+
+}
+
+\\\\\\\\\\\\\\\\\
+testing
+
+package testpackage;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+
+public class parameter {
+	public static WebDriver dr;
+	
+  @Test
+  @Parameters({"un","pw"})
+  public void login(String un,String pw) {
+	  dr.findElement(By.xpath("//input[@name='username']")).sendKeys(un);
+	  dr.findElement(By.xpath("//input[@name='password']")).sendKeys(pw); 
+	  dr.findElement(By.xpath("//button[@id='submit']")).click() ;
+  }  @BeforeTest
+  public void beforeTest() {
+	   dr =new ChromeDriver();
+	   dr.get("https://practicetestautomation.com/practice-test-login/");
+  }
+
+  @AfterTest
+  public void afterTest() {
+	  dr.close(); 
+  }
+
+}
+-----
+xml
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+  <test name="Test">
+    <classes>
+     <!-- <class name="testpackage.NewTest"/>
+        <class name="testpackage.NewTest1"/>
+        <class name="testpackage.NewTest2"/>
+        <class name="testpackage.NewTest3"/>-->
+         <class name="testpackage.parameter"/>
+         <parameter name="un" value="student"/>
+          <parameter name="pw" value="Password123"/>
+          
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+

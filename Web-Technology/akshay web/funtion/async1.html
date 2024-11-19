@@ -1,0 +1,25 @@
+<script>
+    //synchronus-->run line by line
+    console.log('start');
+    const fechdata =()=>{
+          console.log("long way....");
+    }
+    fechdata();
+    console.log("end");
+    console.log("========================================");
+    //asyncronus-->settimer method is used
+    //start---stack
+    //fechdata--callback queue--after3000 sec--comes in stack
+    //end--stack
+    console.log("start");
+    const fechdata1 =()=>{
+        setTimeout(()=>{
+            console.log("long way....after 3000sec settimeout method");
+        },3000)
+        
+    }
+    fechdata1();
+
+
+    console.log("end");
+</script>

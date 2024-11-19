@@ -1,0 +1,26 @@
+<!----promise featute injs
+    it is object which used to 
+     handle aysnc operation
+    promise satate-1)pending--task initialize
+                  2)full filled state- task initalize and complted
+                   3)rejaected
+
+        for fillfiled state we we have then() handler
+        rejected state we have catch()  handler           
+                   -->
+
+        <script>
+            let record=new Promise(function(res,rej){
+              console.log(typeof res,typeof rej);
+             // res("API called");
+             rej("API rejected");
+            });
+            console.log(record);
+            record.then(function(data){
+            console.log(data);
+            });
+            record.catch(function(data){
+            console.log(data);
+            });
+        
+        </script>

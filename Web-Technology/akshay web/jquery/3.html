@@ -1,0 +1,23 @@
+<!--events and effects-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<button id="x1">Hide</button>
+<button id="x2">Show</button>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem veritatis accusantium vero cum dolorem magnam ratione, eveniet blanditiis odit aperiam temporibus praesentium nam adipisci quaerat earum ut enim repellat eligendi.</p>
+
+<script>
+   // $('#x1').click(function(){
+   //     $('p').hide();
+   // });
+
+  //  $('#x2').click(function(){
+   //     $('p').slideUp(3000);
+  //  });
+  $('p').css("background","yellow");
+    $('#x1').click(function(){
+        $('p').fadeOut(3000);
+    });
+    $('#x2').click(function(){
+       $('p').slideDown(3000);
+    });
+
+</script>

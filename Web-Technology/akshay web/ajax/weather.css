@@ -1,0 +1,46 @@
+
+
+document.getElementById("btn").addEventListener("click", async function () {
+    var city = document.getElementById("i1").value;
+    console.log(city);
+
+    // Clear previous weather info
+    document.getElementById("weatherInfo").innerHTML = "<p>Loading...</p>";
+
+    try {
+        // Use fetch with async/await
+        let response = await fetch(`https://api.weatherstack.com/current?access_key=dc2031702a46efcf08d15565d32c4555&query=${city}`);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        
+        let data = await response.json();
+        
+        // Log the raw data to inspect it
+        console.log(data);
+
+        if (data && data.current) {
+            const { temperature, weather_descriptions, weather_icons, humidity, wind_speed } = data.current;
+
+            // Ensure the values are safe to use
+            const icon = weather_icons?.[0] || 'default_icon.png';  // Fallback icon
+            const description = weather_descriptions?.[0] || 'No description available';  // Fallback description
+
+            document.getElementById("weatherInfo").innerHTML = `
+                <h3>Weather in ${city}</h3>
+                <img src="${icon}" alt="Weather Icon">
+                <p>Temperature: ${temperature}°C</p>
+                <p>Description: ${description}</p>
+                <p>Humidity: ${humidity}%</p>
+                <p>Wind Speed: ${wind_speed} km/h</p>
+            `;
+        } else {
+            document.getElementById("weatherInfo").innerHTML = "<p>Weather data not available.</p>";
+        }
+
+    } catch (error) {
+        console.error("Request failed:", error);
+        document.getElementById("weatherInfo").innerHTML = "<p>Failed to fetch data. Please try again later.</p>";
+    }
+});

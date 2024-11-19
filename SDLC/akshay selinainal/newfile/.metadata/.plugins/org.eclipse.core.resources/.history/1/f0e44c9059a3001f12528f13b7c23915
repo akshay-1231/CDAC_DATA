@@ -1,0 +1,52 @@
+package testpackage;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterTest;
+
+public class assignment {
+	public static WebDriver dr;
+  @Test
+  public void login() {
+		dr.manage().window().maximize();
+	  System.out.println(dr.getTitle());
+	  dr.findElement(By.xpath("//input[@name='name']")).sendKeys("akshay");
+	  dr.findElement(By.xpath("//input[@name='name']//following::input[1]")).sendKeys("akshay12@gmail.com");
+	  dr.findElement(By.xpath("//input[@name='name']//following::button[1]")).click();
+	  dr.findElement(By.xpath("//input[@name='password']")).sendKeys("aksha@424206");
+	  
+	  Select sr= new Select(dr.findElement(By.xpath("//input[@name='password']//following::select[1]")));
+	  sr.selectByVisibleText("12");
+	  Select sr1= new Select(dr.findElement(By.xpath("//input[@name='password']//following::select[2]")));
+	  sr1.selectByVisibleText("may");
+	  
+	  Select sr3= new Select(dr.findElement(By.xpath("//input[@name='password']//following::select[2]")));
+	  sr3.selectByVisibleText("2000");
+	  WebElement we = dr.findElement(By.id("newsletter"));
+	  we.sendKeys("1");
+	  we.click();
+	  
+	  dr.findElement(By.xpath("//input[#name='state']")).sendKeys("maharashtra");
+	  
+	  
+	  
+	  
+  }
+  @BeforeTest
+  public void beforeTest() {
+	  dr =new ChromeDriver();
+	  dr.get(" https://automationexercise.com/login");
+	  
+	  
+  }
+
+  @AfterTest
+  public void afterTest() {
+  }
+
+}

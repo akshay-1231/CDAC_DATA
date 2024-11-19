@@ -1,0 +1,21 @@
+package testpackage;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.Test;
+import org.testng.annotations.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeTest;
+
+@Test
+public class NewTest1 {
+  public void f() {
+	  dr3.findElemnt(By.xpath("")).sendkeys("");
+  }
+  @BeforeTest
+  public void beforeTest() {
+		WebDriver dr3=new ChromeDriver();
+		dr3.get("https://demo.guru99.com/test/drag_drop.html");
+  }
+
+}

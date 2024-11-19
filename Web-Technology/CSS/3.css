@@ -1,0 +1,16 @@
+/*section p{
+    color: blue;
+} */
+
+
+/*section>p{
+    color: blue;
+} */
+
+/* section+p{
+   color: brown;
+} */
+
+section~p{
+    color: brown;
+ }

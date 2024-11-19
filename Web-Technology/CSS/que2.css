@@ -1,0 +1,49 @@
+section{
+    text-align:left;
+    background-color: pink;
+}
+body{
+    border: 2px solid black;
+    padding: 50px;
+    margin: 100px;
+}
+img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+}
+#div4{
+    text-align:left;
+}
+h3{
+    background-color: brown;
+}
+h2{
+    background-color: brown;
+}
+h4{
+    text-align: center;
+}
+button{
+    color: blue;
+    background-color: gray;
+    font-size: large;
+    cursor: pointer;
+}
+#p1{
+    word-spacing: 30px;
+}
+#p3{
+    word-spacing: 20px;
+    text-align: left;
+    background-color: brown;
+}
+#p4{
+    background-color: brown;
+    word-spacing: 5px;
+}
+#i1{
+    
+}
+

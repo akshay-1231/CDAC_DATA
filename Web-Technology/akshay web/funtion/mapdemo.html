@@ -1,0 +1,45 @@
+<script>
+    var  numbers=[1,2,3,4,5];
+    var squaes1=[];
+
+    for(let i=0;i<numbers.length;i++){
+        squaes1.push(numbers[i]*numbers[i]);
+    }
+    console.log(squaes1);
+
+    var squaes2 = numbers.map((num) => {return num*num});
+    console.log(squaes2);
+
+
+    var String=["akshay","ajay","kanchan"];
+  var upper1=[];
+    for(let i=0;i<String.length;i++){
+        upper1.push(String[i].toUpperCase());
+    }
+    console.log(upper1);
+//to conver to upper case
+   
+    var upper2 =String.map(String =>String.toUpperCase());
+    console.log(upper2);
+//////////////////////////////////////////////////////////////
+
+    const info =[{id:1, name:"akshay",age:22},{id:2,name:"ajay",age:23},{id:3,name:"kanchan",age:18}];
+    var name1=[];
+    var age1=[];
+  for(let i=0;i<info.length;i++){
+    name1.push(info[i].name);
+    age1.push(info[i].age);
+  }
+  console.log(name1);
+  console.log(age1);
+////////////////////////////////////////////////////////////
+
+  const history =[{id:1, name:"akshay",age:22,math:55,sci:66,eng:44},{id:2,name:"ajay",age:23,math:55,sci:33,eng:77},{id:3,name:"kanchan",age:18,math:66,sci:44,eng:53}];
+   var per=history.map((history) => {
+    let percentage=((history.math+history.sci+history.eng)/300)*100;
+    return history.name+  "  percentage:"+percentage;
+   })
+   console.log(per);
+   //////////////////////////////////////////////////////
+   
+</script>

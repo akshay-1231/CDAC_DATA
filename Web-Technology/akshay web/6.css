@@ -1,0 +1,26 @@
+#x1{
+    width: 1000px;
+    height: 100px;
+    background: rgb(255,100,25);
+    margin: auto;
+}
+
+#x2{
+    width: 1000px;
+    height: 75px;
+    background: rgb(255,150,225);
+    margin: auto;
+}
+
+#x3{
+    width: 1000px;
+    height: 1000px;
+    background: rgb(70, 136, 136);
+    margin: auto;
+}
+#x4{
+    width: 1000px;
+    height: 300px;
+    background: rgb(90, 156, 75);
+    margin: auto;
+}

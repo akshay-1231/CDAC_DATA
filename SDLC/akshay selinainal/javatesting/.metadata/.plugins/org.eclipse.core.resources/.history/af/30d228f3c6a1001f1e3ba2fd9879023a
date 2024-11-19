@@ -1,0 +1,28 @@
+package selinaldemo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class demo6 {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		WebDriver dr=new ChromeDriver();
+		dr.get("https://www.jotform.com/42382403598964");
+		WebElement we=dr.findElement(By.name("q3_Name"));
+		we.sendKeys("ajay");
+		Thread.sleep(2000);
+		WebElement we1=dr.findElement(By.name("q4_email"));
+		we.sendKeys("ajayprajapati42@gmail.com");
+		WebElement we2=dr.findElement(By.id("input_7_month"));
+		we.sendKeys("may");
+		WebElement we3=dr.findElement(By.id("input_7_day"));
+		we.sendKeys("12");
+		WebElement we4=dr.findElement(By.id("input_7_year"));
+		we.sendKeys("1998");
+		
+	}
+
+}

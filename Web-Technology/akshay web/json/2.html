@@ -1,0 +1,18 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!--2.json file data to fetch to 2.html file -->
+<button>Get Data</button>
+<P></P>
+<script>
+    $(document).ready(function(){
+      $("button").click(function(){
+      //  alert("feching data");
+      $.getJSON("2.json",function(data){
+        console.log(data);
+        //inner text--
+       // $('p').text(`<u>${data.name}</u>`);
+       //inner html prperties--
+         $('p').html(`<u>${data.name}</u>`);
+      });
+      });
+    });
+</script>

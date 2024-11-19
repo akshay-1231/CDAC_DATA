@@ -1,0 +1,33 @@
+h1{ color: grey;
+    text-align: center;
+    width: 50pc;
+}
+
+
+ /*p{ color: brown;
+    text-align: center;
+    text-decoration-line: underline;
+    text-decoration-color: blue;
+    text-decoration-style: double;
+    font-size: larger;
+    text-indent: 50px;
+    letter-spacing: 7px;
+    word-spacing: 10px;
+    line-height: 40px;
+    text-transform: capitalize;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    text-shadow: 15px 20px 5px;
+} */
+
+a{
+    text-decoration: none;
+}
+
+div{
+    background-color: aqua;
+}
+
+p{
+    padding-left: 50px;
+    border: 1px solid;
+}
